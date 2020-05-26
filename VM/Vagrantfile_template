@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "debian/buster64"
+  config.vm.provider "virtualbox" do |v|
+    v.name = "tshark VM"
+    v.memory = 4096
+    v.cpus = 2
+  end
+  config.disksize.size = '50GB'
+  config.vm.network "forwarded_port", guest: 5601, host_ip: "127.0.0.1", host: 15601
+  config.vm.network "forwarded_port", guest: 17570, host_ip: "127.0.0.1", host: 17570
+  config.vm.provision "shell", path: "initialize.sh"
+  config.vm.provision "shell", path: "initialize_user.sh",   privileged: false
+  config.vm.provision "file", source: "../Public/", destination: "$HOME/tsharkVM"
+  config.vm.provision "file", source: "../Kibana/", destination: "$HOME/tsharkVM/Kibana"
+  
+  config.vm.provision "shell", path: "post_initialize.sh"
+  config.vm.provision "shell", path: "post_initialize_user.sh",   privileged: false
+end
+
+

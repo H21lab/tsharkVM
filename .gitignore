@@ -1,0 +1,7 @@
+Traces/*
+!Traces
+!Traces/README.md
+VM/Vagrantfile
+VM/.vagrant
+VM/.Vagrantfile_template.swp
+.project

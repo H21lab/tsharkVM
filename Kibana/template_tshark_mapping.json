@@ -1,0 +1,2240 @@
+{
+  "index_patterns": "packets-*",
+  "settings": {
+    "index.mapping.total_fields.limit": 1000000
+  },
+  "mappings": {
+    "doc": {
+      "dynamic": false,
+      "properties": {
+        "timestamp": {
+          "type": "date"
+        },
+        "layers": {
+          "properties": {
+            "dhcp": {
+              "properties": {
+                "dhcp_dhcp_bootp": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_hw_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_hw_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_hops": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_id": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_secs": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_flags": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_flags_bc": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_flags_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_ip_client": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_ip_your": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_ip_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_ip_relay": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_hw_addr": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_hw_addr_padding": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_cookie": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_vendor_specific_options": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_fqdn_s": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_fqdn_o": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_fqdn_e": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_fqdn_n": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_fqdn_flags": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_fqdn_mbz": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_fqdn_rcode1": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_fqdn_rcode2": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pktc_mta_cap_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pktc_mta_cap_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_supp_flow_secure": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_supp_flow_hybrid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_supp_flow_basic": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mta": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_signaling": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_management_event": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mta_extension": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_signaling_extension": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mem_extention": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_cl_mib_reserved": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_mta": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_signaling": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_management_event": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_reserved": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mta": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_signaling": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_management_event": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mta_extension": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_signaling_extension": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mem_extention": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_vendor_pktc_mdc_euro_mib_reserved": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_docsis_cm_cap_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_docsis_cm_cap_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_cm": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_eps": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_emta": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_dsg": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_stpid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_svid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_spcp": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_sdei": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_ctpid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_cvid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_cpcp": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_ccfi": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_stci": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_ctci": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_itpid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_isid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_itci": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_ipcp": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_idei": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_iuca": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_btpid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_btci": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_bpcp": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_bdei": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_bvid": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_bda": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_bsa": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_tc": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_mpls_label": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_160": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_320": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_640": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_1280": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_2560": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_docsis_cm_cap_ussymrate_5120": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_client_id_duid_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_client_id_duid_llt_hw_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_client_id_duid_ll_hw_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_client_id_time": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_client_id_enterprise_num": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_client_id": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_client_id_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_suboption_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_value": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_value_uint": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_value_uint": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_value_uint": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_value_int": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_value_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_value_bool": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_padding": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_subnet_mask": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_time_offset": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_router": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_time_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_name_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_domain_name_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_log_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_quotes_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_lpr_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_impress_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_resource_location_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_boot_file_size": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_swap_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_ip_forwarding": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_policy_filter_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_policy_filter_subnet_mask": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_non_local_source_routing": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_max_datagram_reassembly_size": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_default_ip_ttl": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_path_mtu_aging_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_path_mtu_plateau_table_item": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_interface_mtu": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_all_subnets_are_local": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_broadcast_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_perform_mask_discovery": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_mask_supplier": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_perform_router_discover": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_router_solicitation_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_static_route_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_static_route_router": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_trailer_encapsulation": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_arp_cache_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_ethernet_encapsulation": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_tcp_default_ttl": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_tcp_keepalive_interval": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_tcp_keepalive_garbage": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_nis_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_ntp_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_value": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_value_uint": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_value_uint": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_value_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_padding": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_mtftp_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_mtftp_client_port": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_mtftp_server_port": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_mtftp_timeout": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_mtftp_delay": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery_control": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery_control_broadcast": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery_control_multicast": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery_control_serverlist": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery_control_bstrap": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_multicast_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_servers": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_servers_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_servers_count": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_servers_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_menu": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_menu_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_menu_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_menu_prompt": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_menu_prompt_timeout": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_multicast_address_alloc": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_credential_types": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_item": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_item_type": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_boot_item_layer": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_lcm_nic_option": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_discovery": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_configured": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_lcm_version": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_pxeclient_end": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_aerohive_unknown": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_aerohive_xiqipaddress": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_cl_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cl_padding": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cl_oui_bytes": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_cl_address_realm": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cl_correlation_ID": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_cl_cablecard_capability": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_cl_device_id_ca": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_cl_end": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_alu_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_alu_padding": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_alu_vid": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_alu_tftp1": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_alu_tftp2": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_alu_app_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_alu_end": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_message_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_version": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_server_identifier": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_server_priority": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_reply_port": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_index": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_default_boot_image_id": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_selected_boot_image_id": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_list": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_desc": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_name_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_attributes_filter_list": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_attribute": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_attribute_install": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_attribute_kind": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_boot_image_attribute_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_bsdp_message_size": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_netbios_over_tcpip_name_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_netbios_over_tcpip_dd_name_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_netbios_over_tcpip_node_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_xwindows_system_font_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_xwindows_system_display_manager": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_requested_ip_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_ip_address_lease_time": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_option_overload": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_server_id": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_request_list_item": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_max_message_size": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_renewal_time_value": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_rebinding_time_value": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_novell_options_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_novell_options_value": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_novell_options_value_uint": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_novell_options_value_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_novell_options_value_bool": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_novell_options_broadcast": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_novell_options_preferred_dss_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_novell_options_nearest_nwip_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_novell_options_autoretries": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_novell_options_autoretry_delay": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_novell_options_support_netware_v1_1": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_novell_options_primary_dss": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_nis_plus_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_mobile_ip_home_agent": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_smtp_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_pop3_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_nntp_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_default_www_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_default_finger_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_default_irc_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_streettalk_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_streettalk_da_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_user_class": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_user_class_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_user_class_data": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_slp_directory_agent_value": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_slp_directory_agent_slpda_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_slp_service_scope_value": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_value": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_value_uint": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_value_uint": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_agent_information_option_value_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_agent_information_option_padding": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_agent_circuit_id": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_agent_remote_id": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_reserved": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_docsis_device_class": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_agent_information_option_link_selection": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_agent_information_option_radius_attributes": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_authentication": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_enterprise": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_data_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_cl_option": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_cl_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_cl_tag": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_cl_tag_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vi_cl_docsis_version": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_agent_information_option_flags": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_server_id_override": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_agent_information_option_relay_agent_id": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_link_selection_cisco": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_agent_information_option_vrf_name_vpn_id": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_agent_information_option_vrf_name_global": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_agent_information_option_vrf_name_vpn_id_oui": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_agent_information_option_vrf_name_vpn_id_index": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_agent_information_option_server_id_override_cisco": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_isns_functions": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_functions_enabled": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_functions_dd_base_authorization": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_functions_sec_policy_distribution": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_functions_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_enabled": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_control_node": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_iscsi_target": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_iscsi_initiator": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_ifcp_target_port": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_initiator_target_port": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_discovery_domain_access_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags_enabled": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags_heartbeat": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags_management_scns": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags_default_discovery_domain": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_administrative_flags_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_enabled": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_ike_ipsec_enabled": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_main_mode": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_aggressive_mode": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_pfs": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_transport_mode": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_tunnel_mode": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_isns_server_security_bitmap_reserved": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_isns_primary_server_addr": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_isns_heartbeat_originator_addr": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_isns_secondary_server_addr": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_novell_dss_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_protocol": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_alg_delay": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_algorithm": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_rdm": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_rdm_replay_detection": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_secret_id": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_dhcp_authentication_hmac_md5_hash": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_client_last_transaction_time": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_associated_ip_option": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_client_system_architecture": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_client_network_id_major": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_client_network_id_minor": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_civic_location_what": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_civic_location_ca_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_civic_location_ca_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_netinfo_parent_server_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_dhcp_auto_configuration": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_sip_server_encoding": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_sip_server_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_classless_static_route": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_rfc3825_error": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_rfc3825_latitude": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_longitude": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_latitude_res": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_longitude_res": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_altitude": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_altitide_res": {
+                  "type": "float"
+                },
+                "dhcp_dhcp_option_rfc3825_altitude_type": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_cl_dss_id_option": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_cl_dss_id_option": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_cl_dss_id_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_class_cl_address_mode": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_class_enterprise": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vi_class_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_enterprise": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vi_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_value": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vi_value_uint": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_value_uint": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vi_value_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vi_tr111_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_tr111_device_manufacturer_oui": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vi_cl_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_cl_option_request": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vi_cl_tftp_server_addresses": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_vi_cl_erouter_container_option": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vi_cl_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vi_cl_modem_capabilities": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_subnet_selection_option": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_capwap_access_controller": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_andsf_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_forcerenew_nonce_algorithm": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_rdnss_reserved": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_rdnss_preference": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_rdnss_primary_dns": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_rdnss_secondary_dns": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_tftp_server_address": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_bulk_lease_status_code": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_bulk_lease_base_time": {
+                  "type": "date"
+                },
+                "dhcp_dhcp_option_bulk_lease_start_time_of_state": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_bulk_lease_query_start_time": {
+                  "type": "date"
+                },
+                "dhcp_dhcp_option_bulk_lease_query_end_time": {
+                  "type": "date"
+                },
+                "dhcp_dhcp_option_bulk_lease_dhcp_state": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_bulk_lease_data_source": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_pcp_list_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_pcp_server": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_portparams_offset": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_portparams_psid_length": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_portparams_psid": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_6RD_ipv4_mask_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_6RD_prefix_len": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_6RD_prefix": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_6RD_border_relay_ip": {
+                  "type": "ip"
+                },
+                "dhcp_dhcp_option_end": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_end": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_data": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_vendor_pc_ietf_ccc_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_vendor_pc_i05_ccc_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_realm_unc_key_nom_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_realm_unc_key_max_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_realm_unc_key_max_retries": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_prov_unc_key_nom_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_prov_unc_key_max_timeout": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_cl_ietf_ccc_dev_prov_unc_key_max_retries": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_ccc_ietf_sec_tkt_pc_provision_server": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_ccc_ietf_sec_tkt_all_pc_call_management": {
+                  "type": "boolean"
+                },
+                "dhcp_dhcp_option_vendor_avaya_l2qvlan": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_avaya_vlantest": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_cisco_suboption": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown": {
+                  "type": "byte"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown1": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown2": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown3": {
+                  "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_cisco_nodeid": {
+                  "type": "long"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown5": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown6": {
+                  "type": "short"
+                },
+                "dhcp_dhcp_option_vendor_cisco_unknown10": {
+                  "type": "long"
+                }
+              }
+            },
+            "eth": {
+              "properties": {
+                "eth_eth_dst_oui": {
+                  "type": "integer"
+                },
+                "eth_eth_src_oui": {
+                  "type": "integer"
+                },
+                "eth_eth_len": {
+                  "type": "integer"
+                },
+                "eth_eth_type": {
+                  "type": "integer"
+                },
+                "eth_eth_invalid_lentype": {
+                  "type": "integer"
+                },
+                "eth_eth_addr_oui": {
+                  "type": "integer"
+                },
+                "eth_eth_padding": {
+                  "type": "byte"
+                },
+                "eth_eth_trailer": {
+                  "type": "byte"
+                },
+                "eth_eth_fcs": {
+                  "type": "long"
+                },
+                "eth_eth_fcs_status": {
+                  "type": "short"
+                },
+                "eth_eth_dst_lg": {
+                  "type": "boolean"
+                },
+                "eth_eth_dst_ig": {
+                  "type": "boolean"
+                },
+                "eth_eth_src_lg": {
+                  "type": "boolean"
+                },
+                "eth_eth_src_ig": {
+                  "type": "boolean"
+                },
+                "eth_eth_lg": {
+                  "type": "boolean"
+                },
+                "eth_eth_ig": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "frame": {
+              "properties": {
+                "frame_frame_time": {
+                  "type": "date"
+                },
+                "frame_frame_offset_shift": {
+                  "type": "date"
+                },
+                "frame_frame_time_epoch": {
+                  "type": "date"
+                },
+                "frame_frame_time_delta": {
+                  "type": "date"
+                },
+                "frame_frame_time_delta_displayed": {
+                  "type": "date"
+                },
+                "frame_frame_time_relative": {
+                  "type": "date"
+                },
+                "frame_frame_number": {
+                  "type": "long"
+                },
+                "frame_frame_len": {
+                  "type": "long"
+                },
+                "frame_frame_cap_len": {
+                  "type": "long"
+                },
+                "frame_frame_p2p_dir": {
+                  "type": "short"
+                },
+                "frame_frame_link_nr": {
+                  "type": "integer"
+                },
+                "frame_frame_file_off": {
+                  "type": "long"
+                },
+                "frame_frame_marked": {
+                  "type": "boolean"
+                },
+                "frame_frame_ignored": {
+                  "type": "boolean"
+                },
+                "frame_frame_interface_id": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags_direction": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags_reception_type": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags_fcs_length": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags_reserved": {
+                  "type": "long"
+                },
+                "frame_frame_packet_flags_crc_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_packet_too_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_packet_too_short_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_wrong_inter_frame_gap_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_unaligned_frame_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_start_frame_delimiter_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_preamble_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_packet_flags_symbol_error": {
+                  "type": "boolean"
+                },
+                "frame_frame_encap_type": {
+                  "type": "integer"
+                }
+              }
+            },
+            "ip": {
+              "properties": {
+                "ip_ip_version": {
+                  "type": "short"
+                },
+                "ip_ip_hdr_len": {
+                  "type": "short"
+                },
+                "ip_ip_dsfield": {
+                  "type": "short"
+                },
+                "ip_ip_dsfield_dscp": {
+                  "type": "short"
+                },
+                "ip_ip_dsfield_ecn": {
+                  "type": "short"
+                },
+                "ip_ip_tos": {
+                  "type": "short"
+                },
+                "ip_ip_tos_precedence": {
+                  "type": "short"
+                },
+                "ip_ip_tos_delay": {
+                  "type": "boolean"
+                },
+                "ip_ip_tos_throughput": {
+                  "type": "boolean"
+                },
+                "ip_ip_tos_reliability": {
+                  "type": "boolean"
+                },
+                "ip_ip_tos_cost": {
+                  "type": "boolean"
+                },
+                "ip_ip_len": {
+                  "type": "integer"
+                },
+                "ip_ip_id": {
+                  "type": "integer"
+                },
+                "ip_ip_dst": {
+                  "type": "ip"
+                },
+                "ip_ip_src": {
+                  "type": "ip"
+                },
+                "ip_ip_addr": {
+                  "type": "ip"
+                },
+                "ip_ip_geoip_asnum": {
+                  "type": "long"
+                },
+                "ip_ip_geoip_lat": {
+                  "type": "float"
+                },
+                "ip_ip_geoip_lon": {
+                  "type": "float"
+                },
+                "ip_ip_geoip_src_asnum": {
+                  "type": "long"
+                },
+                "ip_ip_geoip_src_lat": {
+                  "type": "float"
+                },
+                "ip_ip_geoip_src_lon": {
+                  "type": "float"
+                },
+                "ip_ip_geoip_dst_asnum": {
+                  "type": "long"
+                },
+                "ip_ip_geoip_dst_lat": {
+                  "type": "float"
+                },
+                "ip_ip_geoip_dst_lon": {
+                  "type": "float"
+                },
+                "ip_ip_flags": {
+                  "type": "short"
+                },
+                "ip_ip_flags_sf": {
+                  "type": "boolean"
+                },
+                "ip_ip_flags_rb": {
+                  "type": "boolean"
+                },
+                "ip_ip_flags_df": {
+                  "type": "boolean"
+                },
+                "ip_ip_flags_mf": {
+                  "type": "boolean"
+                },
+                "ip_ip_frag_offset": {
+                  "type": "integer"
+                },
+                "ip_ip_ttl": {
+                  "type": "short"
+                },
+                "ip_ip_proto": {
+                  "type": "short"
+                },
+                "ip_ip_checksum": {
+                  "type": "integer"
+                },
+                "ip_ip_checksum_calculated": {
+                  "type": "integer"
+                },
+                "ip_ip_checksum_status": {
+                  "type": "short"
+                },
+                "ip_ip_opt_type": {
+                  "type": "short"
+                },
+                "ip_ip_opt_type_copy": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_type_class": {
+                  "type": "short"
+                },
+                "ip_ip_opt_type_number": {
+                  "type": "short"
+                },
+                "ip_ip_opt_len": {
+                  "type": "short"
+                },
+                "ip_ip_opt_ptr": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sid": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_mtu": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_id_number": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_ohc": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_rhc": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_originator": {
+                  "type": "ip"
+                },
+                "ip_ip_opt_ra": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_addr": {
+                  "type": "ip"
+                },
+                "ip_ip_opt_padding": {
+                  "type": "byte"
+                },
+                "ip_ip_opt_qs_func": {
+                  "type": "short"
+                },
+                "ip_ip_opt_qs_rate": {
+                  "type": "short"
+                },
+                "ip_ip_opt_qs_ttl": {
+                  "type": "short"
+                },
+                "ip_ip_opt_qs_ttl_diff": {
+                  "type": "short"
+                },
+                "ip_ip_opt_qs_unused": {
+                  "type": "short"
+                },
+                "ip_ip_opt_qs_nonce": {
+                  "type": "long"
+                },
+                "ip_ip_opt_qs_reserved": {
+                  "type": "long"
+                },
+                "ip_ip_opt_sec_rfc791_sec": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sec_rfc791_comp": {
+                  "type": "integer"
+                },
+                "ip_ip_opt_sec_cl": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sec_prot_auth_flags": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sec_prot_auth_genser": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_sec_prot_auth_siop_esi": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_sec_prot_auth_sci": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_sec_prot_auth_nsa": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_sec_prot_auth_doe": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_sec_prot_auth_unassigned": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sec_prot_auth_unassigned": {
+                  "type": "short"
+                },
+                "ip_ip_opt_sec_prot_auth_fti": {
+                  "type": "boolean"
+                },
+                "ip_ip_opt_ext_sec_add_sec_info_format_code": {
+                  "type": "short"
+                },
+                "ip_ip_opt_ext_sec_add_sec_info": {
+                  "type": "byte"
+                },
+                "ip_ip_rec_rt": {
+                  "type": "ip"
+                },
+                "ip_ip_cur_rt": {
+                  "type": "ip"
+                },
+                "ip_ip_src_rt": {
+                  "type": "ip"
+                },
+                "ip_ip_empty_rt": {
+                  "type": "ip"
+                },
+                "ip_ip_cipso_tag_type": {
+                  "type": "short"
+                },
+                "ip_ip_fragment_overlap": {
+                  "type": "boolean"
+                },
+                "ip_ip_fragment_overlap_conflict": {
+                  "type": "boolean"
+                },
+                "ip_ip_fragment_multipletails": {
+                  "type": "boolean"
+                },
+                "ip_ip_fragment_toolongfragment": {
+                  "type": "boolean"
+                },
+                "ip_ip_fragment_error": {
+                  "type": "long"
+                },
+                "ip_ip_fragment_count": {
+                  "type": "long"
+                },
+                "ip_ip_fragment": {
+                  "type": "long"
+                },
+                "ip_ip_fragments": {
+                  "type": "byte"
+                },
+                "ip_ip_reassembled_in": {
+                  "type": "long"
+                },
+                "ip_ip_reassembled_length": {
+                  "type": "long"
+                },
+                "ip_ip_reassembled_data": {
+                  "type": "byte"
+                },
+                "ip_ip_cipso_doi": {
+                  "type": "long"
+                },
+                "ip_ip_cipso_sensitivity_level": {
+                  "type": "short"
+                },
+                "ip_ip_cipso_tag_data": {
+                  "type": "byte"
+                },
+                "ip_ip_opt_overflow": {
+                  "type": "short"
+                },
+                "ip_ip_opt_flag": {
+                  "type": "short"
+                },
+                "ip_ip_opt_time_stamp": {
+                  "type": "long"
+                },
+                "ip_ip_opt_time_stamp_addr": {
+                  "type": "ip"
+                }
+              }
+            },
+            "tcp": {
+              "properties": {
+                "tcp_tcp_srcport": {
+                  "type": "integer"
+                },
+                "tcp_tcp_dstport": {
+                  "type": "integer"
+                },
+                "tcp_tcp_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_stream": {
+                  "type": "long"
+                },
+                "tcp_tcp_seq": {
+                  "type": "long"
+                },
+                "tcp_tcp_seq_raw": {
+                  "type": "long"
+                },
+                "tcp_tcp_nxtseq": {
+                  "type": "long"
+                },
+                "tcp_tcp_ack": {
+                  "type": "long"
+                },
+                "tcp_tcp_ack_raw": {
+                  "type": "long"
+                },
+                "tcp_tcp_hdr_len": {
+                  "type": "short"
+                },
+                "tcp_tcp_flags": {
+                  "type": "integer"
+                },
+                "tcp_tcp_flags_res": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_ns": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_cwr": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_ecn": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_urg": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_ack": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_push": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_reset": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_syn": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_flags_fin": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_window_size_value": {
+                  "type": "integer"
+                },
+                "tcp_tcp_window_size": {
+                  "type": "long"
+                },
+                "tcp_tcp_window_size_scalefactor": {
+                  "type": "integer"
+                },
+                "tcp_tcp_checksum": {
+                  "type": "integer"
+                },
+                "tcp_tcp_checksum_status": {
+                  "type": "short"
+                },
+                "tcp_tcp_checksum_calculated": {
+                  "type": "integer"
+                },
+                "tcp_tcp_analysis_duplicate_ack_num": {
+                  "type": "long"
+                },
+                "tcp_tcp_analysis_duplicate_ack_frame": {
+                  "type": "long"
+                },
+                "tcp_tcp_continuation_to": {
+                  "type": "long"
+                },
+                "tcp_tcp_len": {
+                  "type": "long"
+                },
+                "tcp_tcp_analysis_acks_frame": {
+                  "type": "long"
+                },
+                "tcp_tcp_analysis_bytes_in_flight": {
+                  "type": "long"
+                },
+                "tcp_tcp_analysis_push_bytes_sent": {
+                  "type": "long"
+                },
+                "tcp_tcp_analysis_ack_rtt": {
+                  "type": "date"
+                },
+                "tcp_tcp_analysis_initial_rtt": {
+                  "type": "date"
+                },
+                "tcp_tcp_analysis_rto": {
+                  "type": "date"
+                },
+                "tcp_tcp_analysis_rto_frame": {
+                  "type": "long"
+                },
+                "tcp_tcp_urgent_pointer": {
+                  "type": "integer"
+                },
+                "tcp_tcp_segment_overlap": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_segment_overlap_conflict": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_segment_multipletails": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_segment_toolongfragment": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_segment_error": {
+                  "type": "long"
+                },
+                "tcp_tcp_segment_count": {
+                  "type": "long"
+                },
+                "tcp_tcp_segment": {
+                  "type": "long"
+                },
+                "tcp_tcp_reassembled_in": {
+                  "type": "long"
+                },
+                "tcp_tcp_reassembled_length": {
+                  "type": "long"
+                },
+                "tcp_tcp_reassembled_data": {
+                  "type": "byte"
+                },
+                "tcp_tcp_option_kind": {
+                  "type": "short"
+                },
+                "tcp_tcp_option_len": {
+                  "type": "short"
+                },
+                "tcp_tcp_options": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_mss_val": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_wscale_shift": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_wscale_multiplier": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_experimental_data": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_experimental_magic_number": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_unknown_payload": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_sack_le": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_sack_re": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_sack_count": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_echo_value": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_timestamp_tsval": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_timestamp_tsecr": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_subtype": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_version": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_reserved": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_mptcp_flags": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_backup_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_checksumreq_flags": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_extensibility_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_sha1_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_sha256_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_datafin_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_dseqn8_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_dseqnpresent_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_dataack8_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_dataackpresent_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_reserved_flag": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_addrid": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_sendkey": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_recvkey": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_recvtok": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_sendrand": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_sendtrunchmac": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_sendhmac": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_mptcp_addaddrtrunchmac": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_rawdataack": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_rawdataseqno": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_subflowseqno": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_mptcp_datalvllen": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_mptcp_checksum": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_mptcp_ipver": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_echo": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_mptcp_ipv4": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_mptcp_ipv6": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_mptcp_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_cc_value": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_md5_digest": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_qs_rate": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_qs_ttl_diff": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_scps_vector": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_scps_binding_id": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_scps_binding_len": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_snack_offset": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_snack_size": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_snack_le": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_snack_re": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_scpsflags_bets": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_scpsflags_snack1": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_scpsflags_snack2": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_scpsflags_compress": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_scpsflags_nlts": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_scpsflags_reserved": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_scps_binding": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_user_to_granularity": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_user_to_val": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_probe_type1": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_rvbd_probe_type2": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_rvbd_probe_version": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_rvbd_probe_version_raw": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_rvbd_probe_prober": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_rvbd_probe_proxy_ip": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_rvbd_probe_proxy_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_probe_appli_ver": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_probe_client_ip": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_rvbd_probe_storeid": {
+                  "type": "long"
+                },
+                "tcp_tcp_options_rvbd_probe_flags": {
+                  "type": "short"
+                },
+                "tcp_tcp_options_rvbd_probe_flags_notcfe": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_probe_flags_last": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_probe_flags_probe": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_probe_flags_ssl": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_probe_flags_server": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_fw_rst_probe": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_fw_rst_inner": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_fw_rst": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_chksum": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_oob": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_flags_mode": {
+                  "type": "boolean"
+                },
+                "tcp_tcp_options_rvbd_trpy_src_ip": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_rvbd_trpy_dst_ip": {
+                  "type": "ip"
+                },
+                "tcp_tcp_options_rvbd_trpy_src_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_trpy_dst_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_rvbd_trpy_client_port": {
+                  "type": "integer"
+                },
+                "tcp_tcp_options_tfo_cookie": {
+                  "type": "byte"
+                },
+                "tcp_tcp_pdu_time": {
+                  "type": "date"
+                },
+                "tcp_tcp_pdu_size": {
+                  "type": "long"
+                },
+                "tcp_tcp_pdu_last_frame": {
+                  "type": "long"
+                },
+                "tcp_tcp_time_relative": {
+                  "type": "date"
+                },
+                "tcp_tcp_time_delta": {
+                  "type": "date"
+                },
+                "tcp_tcp_proc_srcuid": {
+                  "type": "long"
+                },
+                "tcp_tcp_proc_srcpid": {
+                  "type": "long"
+                },
+                "tcp_tcp_proc_dstuid": {
+                  "type": "long"
+                },
+                "tcp_tcp_proc_dstpid": {
+                  "type": "long"
+                },
+                "tcp_tcp_segment_data": {
+                  "type": "byte"
+                },
+                "tcp_tcp_payload": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_scps_binding_data": {
+                  "type": "byte"
+                },
+                "tcp_tcp_options_rvbd_probe_reserved": {
+                  "type": "short"
+                },
+                "tcp_tcp_fin_retransmission": {
+                  "type": "long"
+                }
+              }
+            },
+            "udp": {
+              "properties": {
+                "udp_udp_srcport": {
+                  "type": "integer"
+                },
+                "udp_udp_dstport": {
+                  "type": "integer"
+                },
+                "udp_udp_port": {
+                  "type": "integer"
+                },
+                "udp_udp_stream": {
+                  "type": "long"
+                },
+                "udp_udp_length": {
+                  "type": "integer"
+                },
+                "udp_udp_checksum": {
+                  "type": "integer"
+                },
+                "udp_udp_checksum_calculated": {
+                  "type": "integer"
+                },
+                "udp_udp_checksum_status": {
+                  "type": "short"
+                },
+                "udp_udp_proc_srcuid": {
+                  "type": "long"
+                },
+                "udp_udp_proc_srcpid": {
+                  "type": "long"
+                },
+                "udp_udp_proc_dstuid": {
+                  "type": "long"
+                },
+                "udp_udp_proc_dstpid": {
+                  "type": "long"
+                },
+                "udp_udp_pdu_size": {
+                  "type": "long"
+                },
+                "udp_udp_time_relative": {
+                  "type": "date"
+                },
+                "udp_udp_time_delta": {
+                  "type": "date"
+                },
+                "udp_udp_payload": {
+                  "type": "byte"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
