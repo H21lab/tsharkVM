@@ -15,7 +15,10 @@ git clone https://github.com/H21lab/tsharkVM.git
 
 ### Build tshark VM
 ```bash
-sudo apt install tshark virtualbox vagrant
+sudo apt update
+sudo apt install tshark virtualbox
+curl -O https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.deb
+sudo apt install ./vagrant_2.2.6_x86_64.deb
 bash ./build.sh
 ```
 
