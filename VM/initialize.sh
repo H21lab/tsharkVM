@@ -18,7 +18,7 @@
 #!/bin/bash
 
 sudo apt update -yq
-DEBIAN_FRONTEND=noninteractive sudo apt dist-upgrade -yq
+#DEBIAN_FRONTEND=noninteractive sudo apt dist-upgrade -yq
 sudo apt install default-jre apt-transport-https gnupg2 -yq
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add -
 echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
