@@ -8,6 +8,7 @@ After the VM is up, the process is simple:
 * ELK stack in VM will process and index the data
 * Kibana is running in VM and can be accessed on `http://127.0.0.1:15601/app/kibana#/dashboards`
 
+## Instuctions to build VM from Ubuntu desktop
 ### Clone source code
 ```bash
 git clone https://github.com/H21lab/tsharkVM.git
@@ -16,9 +17,7 @@ git clone https://github.com/H21lab/tsharkVM.git
 ### Build tshark VM
 ```bash
 sudo apt update
-sudo apt install tshark virtualbox
-curl -O https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.deb
-sudo apt install ./vagrant_2.2.6_x86_64.deb
+sudo apt install tshark virtualbox vagrant
 bash ./build.sh
 ```
 
@@ -62,6 +61,15 @@ vagrant up
 ```bash
 cd ./VM
 vagrant halt
+```
+
+### SSH into VM and check if ELK is running correctly
+```bash
+cd ./VM
+vagrant ssh
+sudo systemctl status kibana.service
+sudo systemctl status elasticsearch.service
+sudo systemctl status logstash.service
 ```
 
 ## Limitations
