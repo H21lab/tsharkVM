@@ -21,6 +21,8 @@ mv /home/vagrant/tsharkVM/tshark_logstash.conf /etc/logstash/conf.d/
 chown logstash:logstash /etc/logstash/conf.d/tshark_logstash.conf
 systemctl start logstash.service
 
+echo "Wait for Elasticsearch to start ... (waiting 30 seconds)"
+sleep 30
 cd /home/vagrant/tsharkVM/Kibana
 curl -X PUT "localhost:9200/_template/packets?include_type_name" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json
 
