@@ -1,4 +1,4 @@
-# tshark VM appliance
+# tshark ELK VM appliance
 
 This project builds virtual machine which can be used for analytics of tshark -T ek (ndjson) output.
 The virtual appliance is built using vagrant, which builds Debian 10 with pre-installed and pre-configured ELK stack. 
