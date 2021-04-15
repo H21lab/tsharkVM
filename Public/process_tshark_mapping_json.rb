@@ -42,7 +42,9 @@ parsed['mappings']['doc']['dynamic'] = true
 #parsed['mappings']['doc']['properties']['layers']['properties']['frame']['properties']['frame_frame_time'] = {"type"=>"text"}
 
 output = File.open("#{Dir.pwd}/Kibana/template_tshark_mapping_deduplicated.json","w")
-output.write(JSON.pretty_generate(parsed))
+json_string = JSON.pretty_generate(parsed)
+json_string = json_string.gsub("\"type\": \"boolean\"", "\"type\": \"short\"")
+output.write(json_string)
 
 
 ############## Methods #############
