@@ -1,0 +1,18 @@
+{
+  "index_patterns": "packets-*",
+  "template": {
+  "settings": {
+    "index.mapping.total_fields.limit": 1000000,
+    "index.mapping.ignore_malformed": true,
+    "index.mapping.coerce": true
+  },
+  "mappings": {
+      "numeric_detection": true,
+      "properties": {
+        "timestamp": {
+          "type": "date"
+        }
+      }  
+    }
+  }
+}

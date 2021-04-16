@@ -19,3 +19,7 @@
 
 cd ./VM
 bash ./build_vm.sh
+
+cd ..
+sleep 10
+bash ./upload_pcaps.sh

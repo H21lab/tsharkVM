@@ -548,15 +548,6 @@
                 "dhcp_dhcp_option_vendor_pxeclient_end": {
                   "type": "short"
                 },
-                "dhcp_dhcp_option_vendor_cisco_suboption": {
-                  "type": "short"
-                },
-                "dhcp_dhcp_option_vendor_aerohive_unknown": {
-                  "type": "byte"
-                },
-                "dhcp_dhcp_option_vendor_aerohive_xiqipaddress": {
-                  "type": "ip"
-                },
                 "dhcp_dhcp_option_vendor_cl_suboption": {
                   "type": "short"
                 },
@@ -1485,7 +1476,7 @@
                   "type": "float"
                 },
                 "ip_ip_flags": {
-                  "type": "short"
+                  "type": "integer"
                 },
                 "ip_ip_flags_sf": {
                   "type": "boolean"
@@ -1977,9 +1968,6 @@
                 "tcp_tcp_options_mptcp_ipver": {
                   "type": "short"
                 },
-                "tcp_tcp_options_mptcp_echo": {
-                  "type": "short"
-                },
                 "tcp_tcp_options_mptcp_ipv4": {
                   "type": "ip"
                 },
@@ -2226,9 +2214,6 @@
                 },
                 "udp_udp_time_delta": {
                   "type": "date"
-                },
-                "udp_udp_payload": {
-                  "type": "byte"
                 }
               }
             }
