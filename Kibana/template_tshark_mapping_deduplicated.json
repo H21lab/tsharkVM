@@ -1,13 +1,12 @@
 {
   "index_patterns": "packets-*",
-  "settings": {
-    "index.mapping.total_fields.limit": 1000000,
-    "index.mapping.ignore_malformed": true,
-    "index.mapping.coerce": true
-  },
-  "mappings": {
-    "doc": {
-      "dynamic": true,
+  "template": {
+    "settings": {
+      "index.mapping.total_fields.limit": 1000000,
+      "index.mapping.ignore_malformed": true,
+      "index.mapping.coerce": true
+    },
+    "mappings": {
       "properties": {
         "timestamp": {
           "type": "date"
@@ -17,7 +16,7 @@
             "dhcp": {
               "properties": {
                 "dhcp_dhcp_bootp": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_type": {
                   "type": "short"
@@ -41,7 +40,7 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_flags_bc": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_flags_reserved": {
                   "type": "integer"
@@ -71,16 +70,16 @@
                   "type": "byte"
                 },
                 "dhcp_dhcp_fqdn_s": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_fqdn_o": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_fqdn_e": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_fqdn_n": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_fqdn_flags": {
                   "type": "short"
@@ -101,64 +100,64 @@
                   "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_supp_flow_secure": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_supp_flow_hybrid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_supp_flow_basic": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mta": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_signaling": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_management_event": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mta_extension": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_signaling_extension": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_mem_extention": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_cl_mib_reserved": {
                   "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_mta": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_signaling": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_management_event": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_ietf_mib_reserved": {
                   "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mta": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_signaling": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_management_event": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mta_extension": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_signaling_extension": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_mem_extention": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_vendor_pktc_mdc_euro_mib_reserved": {
                   "type": "short"
@@ -170,109 +169,109 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_cm": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_eps": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_emta": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ranging_hold_off_dsg": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_stpid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_svid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_spcp": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_sdei": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_ctpid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_cvid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_cpcp": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_ccfi": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_stci": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_ctci": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_itpid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_isid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_itci": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_ipcp": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_idei": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_iuca": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_btpid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_btci": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_bpcp": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_bdei": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_bvid": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_bda": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_bsa": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_tc": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_mpls_label": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_160": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_320": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_640": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_1280": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_2560": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_docsis_cm_cap_ussymrate_5120": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_client_id_duid_type": {
                   "type": "integer"
@@ -317,7 +316,7 @@
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_value_bool": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_padding": {
                   "type": "byte"
@@ -362,7 +361,7 @@
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_ip_forwarding": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_policy_filter_ip": {
                   "type": "ip"
@@ -371,7 +370,7 @@
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_non_local_source_routing": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_max_datagram_reassembly_size": {
                   "type": "integer"
@@ -389,19 +388,19 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_option_all_subnets_are_local": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_broadcast_address": {
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_perform_mask_discovery": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_mask_supplier": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_perform_router_discover": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_router_solicitation_address": {
                   "type": "ip"
@@ -413,13 +412,13 @@
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_trailer_encapsulation": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_arp_cache_timeout": {
                   "type": "long"
                 },
                 "dhcp_dhcp_option_ethernet_encapsulation": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_tcp_default_ttl": {
                   "type": "short"
@@ -428,7 +427,7 @@
                   "type": "long"
                 },
                 "dhcp_dhcp_option_tcp_keepalive_garbage": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_nis_server": {
                   "type": "ip"
@@ -470,16 +469,16 @@
                   "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_discovery_control_broadcast": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_discovery_control_multicast": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_discovery_control_serverlist": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_discovery_control_bstrap": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_multicast_address": {
                   "type": "ip"
@@ -530,25 +529,16 @@
                   "type": "byte"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_discovery": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_configured": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_lcm_version": {
                   "type": "long"
                 },
                 "dhcp_dhcp_option_vendor_pxeclient_end": {
                   "type": "short"
-                },
-                "dhcp_dhcp_option_vendor_cisco_suboption": {
-                  "type": "short"
-                },
-                "dhcp_dhcp_option_vendor_aerohive_unknown": {
-                  "type": "byte"
-                },
-                "dhcp_dhcp_option_vendor_aerohive_xiqipaddress": {
-                  "type": "ip"
                 },
                 "dhcp_dhcp_option_vendor_cl_suboption": {
                   "type": "short"
@@ -704,10 +694,10 @@
                   "type": "ip"
                 },
                 "dhcp_dhcp_option_novell_options_value_bool": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_novell_options_broadcast": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_novell_options_preferred_dss_server": {
                   "type": "ip"
@@ -722,7 +712,7 @@
                   "type": "short"
                 },
                 "dhcp_dhcp_option_novell_options_support_netware_v1_1": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_novell_options_primary_dss": {
                   "type": "ip"
@@ -866,13 +856,13 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_option_isns_functions_enabled": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_functions_dd_base_authorization": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_functions_sec_policy_distribution": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_functions_reserved": {
                   "type": "integer"
@@ -881,22 +871,22 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_enabled": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_control_node": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_iscsi_target": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_iscsi_initiator": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_ifcp_target_port": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_initiator_target_port": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_discovery_domain_access_reserved": {
                   "type": "integer"
@@ -905,16 +895,16 @@
                   "type": "integer"
                 },
                 "dhcp_dhcp_option_isns_administrative_flags_enabled": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_administrative_flags_heartbeat": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_administrative_flags_management_scns": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_administrative_flags_default_discovery_domain": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_administrative_flags_reserved": {
                   "type": "integer"
@@ -923,25 +913,25 @@
                   "type": "long"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_enabled": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_ike_ipsec_enabled": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_main_mode": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_aggressive_mode": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_pfs": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_transport_mode": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_tunnel_mode": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_isns_server_security_bitmap_reserved": {
                   "type": "integer"
@@ -1139,7 +1129,7 @@
                   "type": "short"
                 },
                 "dhcp_dhcp_option_bulk_lease_data_source": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_pcp_list_length": {
                   "type": "short"
@@ -1202,16 +1192,19 @@
                   "type": "long"
                 },
                 "dhcp_dhcp_ccc_ietf_sec_tkt_pc_provision_server": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_ccc_ietf_sec_tkt_all_pc_call_management": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_avaya_l2qvlan": {
                   "type": "integer"
                 },
                 "dhcp_dhcp_option_vendor_avaya_vlantest": {
                   "type": "integer"
+                },
+                "dhcp_dhcp_option_vendor_cisco_suboption": {
+                  "type": "short"
                 },
                 "dhcp_dhcp_option_vendor_cisco_unknown": {
                   "type": "byte"
@@ -1272,22 +1265,22 @@
                   "type": "short"
                 },
                 "eth_eth_dst_lg": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "eth_eth_dst_ig": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "eth_eth_src_lg": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "eth_eth_src_ig": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "eth_eth_lg": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "eth_eth_ig": {
-                  "type": "boolean"
+                  "type": "short"
                 }
               }
             },
@@ -1330,10 +1323,10 @@
                   "type": "long"
                 },
                 "frame_frame_marked": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_ignored": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_interface_id": {
                   "type": "long"
@@ -1354,28 +1347,28 @@
                   "type": "long"
                 },
                 "frame_frame_packet_flags_crc_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_packet_too_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_packet_too_short_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_wrong_inter_frame_gap_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_unaligned_frame_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_start_frame_delimiter_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_preamble_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_packet_flags_symbol_error": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "frame_frame_encap_type": {
                   "type": "integer"
@@ -1406,16 +1399,16 @@
                   "type": "short"
                 },
                 "ip_ip_tos_delay": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_tos_throughput": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_tos_reliability": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_tos_cost": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_len": {
                   "type": "integer"
@@ -1460,19 +1453,19 @@
                   "type": "float"
                 },
                 "ip_ip_flags": {
-                  "type": "short"
+                  "type": "integer"
                 },
                 "ip_ip_flags_sf": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_flags_rb": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_flags_df": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_flags_mf": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_frag_offset": {
                   "type": "integer"
@@ -1496,7 +1489,7 @@
                   "type": "short"
                 },
                 "ip_ip_opt_type_copy": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_type_class": {
                   "type": "short"
@@ -1571,25 +1564,25 @@
                   "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_genser": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_siop_esi": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_sci": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_nsa": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_doe": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_unassigned": {
                   "type": "short"
                 },
                 "ip_ip_opt_sec_prot_auth_fti": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_opt_ext_sec_add_sec_info_format_code": {
                   "type": "short"
@@ -1613,16 +1606,16 @@
                   "type": "short"
                 },
                 "ip_ip_fragment_overlap": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_fragment_overlap_conflict": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_fragment_multipletails": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_fragment_toolongfragment": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "ip_ip_fragment_error": {
                   "type": "long"
@@ -1704,34 +1697,34 @@
                   "type": "integer"
                 },
                 "tcp_tcp_flags_res": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_ns": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_cwr": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_ecn": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_urg": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_ack": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_push": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_reset": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_syn": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_flags_fin": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_window_size_value": {
                   "type": "integer"
@@ -1788,16 +1781,16 @@
                   "type": "integer"
                 },
                 "tcp_tcp_segment_overlap": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_segment_overlap_conflict": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_segment_multipletails": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_segment_toolongfragment": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_segment_error": {
                   "type": "long"
@@ -1949,9 +1942,6 @@
                 "tcp_tcp_options_mptcp_ipver": {
                   "type": "short"
                 },
-                "tcp_tcp_options_mptcp_echo": {
-                  "type": "short"
-                },
                 "tcp_tcp_options_mptcp_ipv4": {
                   "type": "ip"
                 },
@@ -1995,19 +1985,19 @@
                   "type": "integer"
                 },
                 "tcp_tcp_options_scpsflags_bets": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_scpsflags_snack1": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_scpsflags_snack2": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_scpsflags_compress": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_scpsflags_nlts": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_scpsflags_reserved": {
                   "type": "short"
@@ -2016,7 +2006,7 @@
                   "type": "short"
                 },
                 "tcp_tcp_options_user_to_granularity": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_user_to_val": {
                   "type": "integer"
@@ -2055,40 +2045,40 @@
                   "type": "short"
                 },
                 "tcp_tcp_options_rvbd_probe_flags_notcfe": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_probe_flags_last": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_probe_flags_probe": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_probe_flags_ssl": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_probe_flags_server": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags": {
                   "type": "integer"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_fw_rst_probe": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_fw_rst_inner": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_fw_rst": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_chksum": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_oob": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_flags_mode": {
-                  "type": "boolean"
+                  "type": "short"
                 },
                 "tcp_tcp_options_rvbd_trpy_src_ip": {
                   "type": "ip"
@@ -2198,9 +2188,6 @@
                 },
                 "udp_udp_time_delta": {
                   "type": "date"
-                },
-                "udp_udp_payload": {
-                  "type": "byte"
                 }
               }
             }

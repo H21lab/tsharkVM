@@ -24,7 +24,7 @@ systemctl start logstash.service
 echo "Wait for Elasticsearch to start ... (waiting 30 seconds)"
 sleep 30
 cd /home/vagrant/tsharkVM/Kibana
-curl -X PUT "localhost:9200/_template/packets?include_type_name" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json
+curl -X PUT "localhost:9200/_index_template/packets_template" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json
 
 echo "Wait for Kibana to start ... (waiting 60 seconds)"
 sleep 60

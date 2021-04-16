@@ -35,6 +35,7 @@ tshark -r trace.pcapng -x -T ek > /dev/tcp/localhost/17570
 ```bash
 firefox http://127.0.0.1:15601/app/kibana#/dashboards
 ```
+Open Main Dashboard and increase time window to e.g. last 100 years to see there the sample pcaps.
 
 ![](res/tshark_vm_dashboard.png?raw=true "Kibana Dashboard")
 ![](res/tshark_vm_discover.png?raw=true "Kibana Discover")
@@ -72,7 +73,34 @@ sudo systemctl status elasticsearch.service
 sudo systemctl status logstash.service
 ```
 
+# Elasticsearch mapping template
+In the project is included simple Elasticseacrh mapping template generated for the ``frame,eth,ip,udp,tcp,dhcp`` protocols.
+To handle additional protocols efficiently it can be required to update the mapping template in the following way:
+
+```
+# 1. Create custom mapping, by selecting required protocols
+tshark -G elastic-mapping --elastic-mapping-filter frame,eth,ip,udp,tcp,dns > ./Kibana/custom_tshark_mapping.json
+
+# 2. Deduplicate and post-process the mapping to fit current Elasticsearch version
+ruby ./Public/process_tshark_mapping_json.rb
+
+# 3. Upload file to vagrant VM
+cd VM
+vagrant upload ../Kibana/custom_tshark_mapping_deduplicated.json /home/vagrant/tsharkVM/Kibana/custom_tshark_mapping_deduplicated.json
+cd ..
+
+# 4. Connect to VM and upload template in the Elasticsearch
+cd VM
+vagrant ssh
+cd tsharkVM/Kibana
+curl -X PUT "localhost:9200/_index_template/packets_template" -H 'Content-Type: application/json' -d@custom_tshark_mapping_deduplicated.json
+```
+
+Alternative can be using the dynamic mapping. See template ``./Kibana/template_tshark_mapping_dynamic.json``. And consider setting the numeric_detection parameter true/false depending on the mapping requirements and pcaps used. Upload the template into Elasticsearch in similar way as described above.
+
 ## Limitations
+tshark -G elastic-mapping --elastic-mapping-filter mapping could be outdated, it is not following properly the Elasticsearch changes and the output can be duplicated. The manual configuration and post-processing of the mapping template is required.
+
 Program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
 ## License
@@ -80,6 +108,16 @@ The default license of source codes provided inside this project is the Apache L
 Additionally refer to individual licenses and terms of used of installed software (see licenses for Wireshark, Elastic and other). 
 
 ## Attribution
+Special thanks to people who helped with the Wireshark development or otherwise contributed to this work:
+* Anders Broman
+* [Alexis La Goutte](https://twitter.com/alagoutte)
+* Christoph Wurm 
+* [Dario Lombardo](https://twitter.com/crondaemon1)
+* [Vic Hargrave](https://twitter.com/vichargrave)
+
+Example pcap in ./Traces subfolder was downloaded from https://wiki.wireshark.org/SampleCaptures
+
 Created by Martin Kacer
 
-Copyright 2020 H21 lab, All right reserved, https://www.h21lab.com
+Copyright 2021 H21 lab, All right reserved, https://www.h21lab.com
+
