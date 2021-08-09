@@ -19,6 +19,12 @@
 
 mv /home/vagrant/tsharkVM/tshark_logstash.conf /etc/logstash/conf.d/
 chown logstash:logstash /etc/logstash/conf.d/tshark_logstash.conf
+mv /home/vagrant/tsharkVM/tshark_logstash_fileinput.conf /etc/logstash/conf.d/
+chown logstash:logstash /etc/logstash/conf.d/tshark_logstash_fileinput.conf
+mkdir /home/vagrant/input
+chmod go+w /home/vagrant/input
+chown logstash:logstash /home/vagrant/input
+
 systemctl start logstash.service
 
 echo "Waiting for Elasticsearch to start ... (waiting 3 minutes)"

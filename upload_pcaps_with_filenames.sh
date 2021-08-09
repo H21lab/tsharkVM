@@ -17,9 +17,8 @@
 
 #!/bin/bash
 
+find ./Traces/ -type f -not -name "*.md" -exec bash -c 'tshark -r {} -T ek > ./VM/Traces/$(basename {}).ndjson' \;
 cd ./VM
-bash ./build_vm.sh
-
+vagrant scp ./Traces/*.ndjson /home/vagrant/input
+rm ./Traces/*.ndjson
 cd ..
-sleep 10
-bash ./upload_pcaps_with_filenames.sh

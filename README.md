@@ -19,17 +19,25 @@ git clone https://github.com/H21lab/tsharkVM.git
 sudo apt update
 sudo apt install tshark virtualbox vagrant
 vagrant plugin install vagrant-disksize
+vagrant plugin install vagrant-scp
 bash ./build.sh
 ```
 
 ### Upload pcaps to VM
 ```bash
 # copy your pcaps into ./Trace
-# run following script 
-bash upload_pcaps.sh 
+
+# upload the pcaps (with filenames)
+bash upload_pcaps_with_filenames.sh
+
+# or use vagrant scp to copy the ndjson files into /home/vagrant/input
+
+# or upload the pcaps (without filenames)
+bash upload_pcaps.sh
 
 # or use tshark directly towards 127.0.0.1 17570/tcp
 tshark -r trace.pcapng -x -T ek > /dev/tcp/localhost/17570
+
 ```
 
 ### Open Kibana with browser
