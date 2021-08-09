@@ -18,6 +18,7 @@ git clone https://github.com/H21lab/tsharkVM.git
 ```bash
 sudo apt update
 sudo apt install tshark virtualbox vagrant
+vagrant plugin install vagrant-disksize
 bash ./build.sh
 ```
 
