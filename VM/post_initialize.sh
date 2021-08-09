@@ -21,12 +21,47 @@ mv /home/vagrant/tsharkVM/tshark_logstash.conf /etc/logstash/conf.d/
 chown logstash:logstash /etc/logstash/conf.d/tshark_logstash.conf
 systemctl start logstash.service
 
-echo "Wait for Elasticsearch to start ... (waiting 30 seconds)"
-sleep 30
-cd /home/vagrant/tsharkVM/Kibana
-curl -X PUT "localhost:9200/_index_template/packets_template" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json
+echo "Waiting for Elasticsearch to start ... (waiting 3 minutes)"
+end=$((SECONDS+180))
+while [ $SECONDS -lt $end ]; do
+    if [ $(systemctl is-active elasticsearch.service) == "active" ]; then
+        sleep 10
+        echo "Importing Elasticsearch templates"
+        cd /home/vagrant/tsharkVM/Kibana
+        curl -X PUT "localhost:9200/_index_template/packets_template" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json
+        break
+    fi
+    sleep 1
+done
+if [ $(systemctl is-active elasticsearch.service) != "active" ]; then
+    echo "Error: Elasticsearch is not running. Failed to import Elasticsearch templates."
+    echo "=== Start Elasticsearch and import it manually by executing the following ==="
+    echo "cd ./VM"
+    echo "vagrant ssh"
+    echo "sudo systemctl start elasticsearch.service"
+    echo "cd tsharkVM/Kibana/"
+    echo "curl -X PUT \"localhost:9200/_index_template/packets_template\" -H 'Content-Type: application/json' -d@template_tshark_mapping_deduplicated.json"
+fi
 
-echo "Wait for Kibana to start ... (waiting 60 seconds)"
-sleep 60
-curl -X POST "localhost:5601/api/saved_objects/_import?overwrite=true" -H "kbn-xsrf: true" --form file=@export.ndjson
-cd /home/vagrant
+echo "Waiting for Kibana to start ... (waiting 3 minutes)"
+end=$((SECONDS+180))
+while [ $SECONDS -lt $end ]; do
+    if [ $(systemctl is-active kibana.service) == "active" ]; then
+        sleep 15
+        echo "Importing Kibana objects"
+        curl -X POST "localhost:5601/api/saved_objects/_import?overwrite=true" -H "kbn-xsrf: true" --form file=@export.ndjson
+        cd /home/vagrant
+        break
+    fi
+    sleep 1
+done
+if [ $(systemctl is-active kibana.service) != "active" ]; then
+    echo "Error: Kibana is not running. Failed to import Kibana objects."
+    echo "=== Start Kibana and import it manually by executing the following ==="
+    echo "cd ./VM"
+    echo "vagrant ssh"
+    echo "sudo systemctl start kibana.service"
+    echo "cd tsharkVM/Kibana/"
+    echo "curl -X POST \"localhost:5601/api/saved_objects/_import?overwrite=true\" -H \"kbn-xsrf: true\" --form file=@export.ndjson"
+fi
+
