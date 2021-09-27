@@ -114,6 +114,9 @@ Program is distributed in the hope that it will be useful, but WITHOUT ANY WARRA
 
 ## License
 The default license of source codes provided inside this project is the Apache License v2.0. 
+
+simple-NIDS is licensed under the AGPLv3 (Free Open Source GNU Affero GPL v3.0).
+
 Additionally refer to individual licenses and terms of used of installed software (see licenses for Wireshark, Elastic and other). 
 
 ## Attribution
