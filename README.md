@@ -1,7 +1,7 @@
 # tshark ELK VM appliance
 
 This project builds virtual machine which can be used for analytics of tshark -T ek (ndjson) output.
-The virtual appliance is built using vagrant, which builds Debian 10 with pre-installed and pre-configured ELK stack. 
+The virtual appliance is built using vagrant, which builds Debian with pre-installed and pre-configured ELK stack. 
 
 After the VM is up, the process is simple:
 * decoded pcaps (`tshark -T ek output` / ndjson) are sent over `TCP/17570` to the VM

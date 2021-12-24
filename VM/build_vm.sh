@@ -20,6 +20,6 @@
 # vagrant destroy default
 
 rm ./Vagrantfile
-vagrant init debian/buster64
+vagrant init debian/bullseye64
 cat Vagrantfile_template > Vagrantfile
 vagrant up
