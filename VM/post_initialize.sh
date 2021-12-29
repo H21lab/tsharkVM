@@ -71,3 +71,6 @@ if [ $(systemctl is-active kibana.service) != "active" ]; then
     echo "curl -X POST \"localhost:5601/api/saved_objects/_import?overwrite=true\" -H \"kbn-xsrf: true\" --form file=@export.ndjson"
 fi
 
+# Resize disk space
+resize2fs -p -F /dev/sda1
+
