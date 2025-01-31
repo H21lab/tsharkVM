@@ -83,7 +83,7 @@ sudo systemctl status logstash.service
 ```
 
 # Elasticsearch mapping template
-In the project is included simple Elasticseacrh mapping template generated for the ``frame,eth,ip,udp,tcp,dhcp`` protocols.
+In the project is included simple Elasticsearch mapping template generated for the ``frame,eth,ip,udp,tcp,dhcp`` protocols.
 To handle additional protocols efficiently it can be required to update the mapping template in the following way:
 
 ```
