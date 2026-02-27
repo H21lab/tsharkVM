@@ -1,3 +1,10 @@
+# 💡 Update: tshark-opensearch
+More recent application **tshark-opensearch** is now available.
+
+You can find it in the https://github.com/h21-lab/apps-collection-info repository.
+👉 [Get Access](https://buy.polar.sh/polar_cl_eRpd2b9nzlDyHdA2M8vYvCiUyCjl4gPZeYiHs41btfM)
+
+
 # tshark ELK VM appliance
 
 This project builds virtual machine which can be used for analytics of tshark -T ek (ndjson) output.
